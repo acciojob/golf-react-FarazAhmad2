@@ -34,15 +34,16 @@ class App extends Component {
     this.keydownHandler = (e) => {
       if (e.key == "ArrowRight") {
         count += 5;
-        this.setState({ballPosition:{left : count+'px'}})
+        this.setState({ posi: count, ballPosition: { left: count + "px" } });
+        console.log(this.state.posi);
       }
     };
     document.addEventListener("keydown", this.keydownHandler);
-}
+  }
 
-componentWillUnmount() {
+  componentWillUnmount() {
     document.removeEventListener("keydown", this.keydownHandler);
-}
+  }
   render() {
     return <div className="playground">{this.renderBallOrButton()}</div>;
   }
