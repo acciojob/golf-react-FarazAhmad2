@@ -31,10 +31,13 @@ class App extends Component {
 
   keydownHandler(e) {
     if (e.key === "ArrowRight") {
-      this.setState(prevState => ({ 
-        posi: prevState.posi + 5, 
-        ballPosition: { left: prevState.posi + 5 + "px" } 
-      }));
+      this.setState(prevState => {
+        const newPosi = prevState.posi + 5;
+        return {
+          posi: newPosi,
+          ballPosition: { left: newPosi + "px" }
+        };
+      });
     }
   }
 
